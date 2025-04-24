@@ -1,6 +1,6 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
+    // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     
@@ -9,151 +9,75 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.toggle('show');
     });
     
-    // Close mobile menu when clicking a nav item
-    document.querySelectorAll('nav a').forEach(function(link) {
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             nav.classList.remove('show');
         });
     });
     
-    // Typing effect
-    const typedTextSpan = document.querySelector('.typed-text');
-    const cursorSpan = document.querySelector('.cursor');
-    
-    const textArray = ['Developer', 'Designer', 'Creator', 'Problem Solver'];
-    const typingDelay = 100;
-    const erasingDelay = 50;
-    const newTextDelay = 2000; // Delay between current and next text
-    let textArrayIndex = 0;
-    let charIndex = 0;
-    
-    function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-            if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingDelay);
-        } else {
-            cursorSpan.classList.remove('typing');
-            setTimeout(erase, newTextDelay);
-        }
-    }
-    
-    function erase() {
-        if (charIndex > 0) {
-            if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-            charIndex--;
-            setTimeout(erase, erasingDelay);
-        } else {
-            cursorSpan.classList.remove('typing');
-            textArrayIndex++;
-            if(textArrayIndex >= textArray.length) textArrayIndex = 0;
-            setTimeout(type, typingDelay + 1100);
-        }
-    }
-    
-    if(textArray.length) setTimeout(type, newTextDelay + 250);
-    
-    // Project filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    filterButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(function(btn) {
-                btn.classList.remove('active');
-            });
-            // Add active class to clicked button
-            this.classList.add('active');
+    // Smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            const filter = this.getAttribute('data-filter');
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
             
-            projectCards.forEach(function(card) {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
+    
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    function highlightNav() {
+        const scrollPosition = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
     
     // Back to top button
     const backToTopButton = document.querySelector('.back-to-top');
     
-    window.addEventListener('scroll', function() {
+    function toggleBackToTopButton() {
         if (window.pageYOffset > 300) {
             backToTopButton.classList.add('show');
         } else {
             backToTopButton.classList.remove('show');
         }
-    });
-    
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Form submission
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the data to a server
-            // For now, we'll just log it to the console and show an alert
-            console.log({
-                name,
-                email,
-                subject,
-                message
-            });
-            
-            // Display a success message
-            alert('Thanks for your message! I\'ll get back to you soon.');
-            
-            // Reset the form
-            contactForm.reset();
-        });
     }
     
-    // Add active class to navigation items based on scroll position
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('nav ul li a');
-    
+    // Add scroll event listeners
     window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navItems.forEach(function(item) {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === '#' + current) {
-                item.classList.add('active');
-            }
-        });
+        highlightNav();
+        toggleBackToTopButton();
     });
+    
+    // Initial calls on page load
+    highlightNav();
+    toggleBackToTopButton();
 });

@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Adams | Personal Website</title>
+    <title>Jake Adams</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,7 +16,6 @@
             <h1 class="logo">Jake Adams</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -29,39 +30,21 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Jake Adams</span></h1>
-                <h2>I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-                <p>Welcome to my personal corner on the web.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary-btn">View My Work</a>
-                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user"></i>
-                        <p>Add your photo here</p>
-                    </div>
+                    <img src="assets/me.webp" alt="Jake Adams">
                 </div>
                 <div class="about-text">
-                    <p>Hello! I'm Jake Adams, a [Your Profession] based in [Your Location]. I'm passionate about [Your Interests/Specialties].</p>
-                    <p>I have experience in [Your Field/Industry] and I enjoy [What You Enjoy Doing]. In my free time, I like to [Your Hobbies].</p>
-                    <p>I'm always looking for new challenges and opportunities to grow both personally and professionally.</p>
+                    <h2>AI Builder & Entrepreneur</h2>
+                    <p>Optimist. Accelerationist. First-principles thinker.</p>
+                    <p>I'm all in on AI. I'm building AI agents, applications, and infrastructure. I believe AGI will emerge from a collective Internet of Agents (IoA), and am contributing my efforts towards laying the ground work for this Internet of Agents. I also have a keen interest in blockchains and decentralized systems.</p>
                     <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/jaketadams" target="_blank" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://github.com/endev-llc" target="_blank" title="Endev GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/jakeadams3" target="_blank" title="Personal GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:jakeadams1230@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -70,125 +53,138 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="other">Other</button>
-            </div>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-                <div class="project-card" data-category="web">
+
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Project 1">
+                        <img src="assets/a2a.webp" alt="A2A Messaging">
                     </div>
                     <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A brief description of your project. What technologies you used and what problem it solves.</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+                        <h3>Agent-to-Agent (A2A) Messaging</h3>
+                        <p>Building a decentralized on-chain messaging protocol for AI agents that's 100x cheaper than SMS. Enables agents to communicate via blockchain transactions with a single cURL command.</p>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-globe"></i> Live</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://x.com/jaketadams/status/1895340286622212250" target="_blank"><i class="fa-brands fa-x-twitter"></i> Project Thread</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="mobile">
+
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Project 2">
+                        <img src="assets/ns.webp" alt="NovaScanner">
                     </div>
                     <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>A brief description of your project. What technologies you used and what problem it solves.</p>
-                        <div class="project-tags">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                        </div>
+                        <h3>The NovaScanner</h3>
+                        <p>AI-powered scanner that detects how processed food items are from images. Helps users make healthier food choices by identifying ultra-processed foods.</p>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-globe"></i> Live</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://thenovascanner.com/" target="_blank"><i class="fas fa-globe"></i> Website</a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="other">
+                
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Project 3">
+                        <img src="assets/clipzy.webp" alt="Clipzy">
                     </div>
                     <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>A brief description of your project. What technologies you used and what problem it solves.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Machine Learning</span>
-                        </div>
+                        <h3>Clipzy</h3>
+                        <p>3D video sharing app for Apple Vision Pro with a TikTok-like feed format for spatial videos. One of the early apps available on the Vision Pro App Store.</p>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i class="fas fa-globe"></i> Live</a>
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://apps.apple.com/us/app/clipzy-3d-video-sharing/id6477747289" target="_blank"><i class="fab fa-app-store-ios"></i> App Store</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="more-projects">
-                <a href="#" class="btn secondary-btn">See More Projects</a>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/convo.webp" alt="Convo">
+                    </div>
+                    <div class="project-info">
+                        <h3>Convo</h3>
+                        <p>Location-based social media iOS app that connects users with people nearby. Creates spontaneous connections based on physical proximity.</p>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/us/app/convo-location-based-chatting/id6453683240" target="_blank"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/circadian.webp" alt="My Circadian">
+                    </div>
+                    <div class="project-info">
+                        <h3>My Circadian</h3>
+                        <p>iOS app to help users track and optimize their circadian rhythm for better sleep and overall health.</p>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/us/app/my-circadian/id6450283379" target="_blank"><i class="fab fa-app-store-ios"></i> App Store</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/endev.webp" alt="Endev">
+                    </div>
+                    <div class="project-info">
+                        <h3>Endev LLC</h3>
+                        <p>My company building AI projects and products, focused on creating the Internet of Agents infrastructure and AI applications that solve real-world problems.</p>
+                        <div class="project-links">
+                            <a href="https://www.endev.tech/" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                            <a href="https://github.com/endev-llc" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-content">
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar">
-                            <div class="skill-name">JavaScript</div>
-                            <div class="skill-progress">
-                                <div class="progress" style="width: 90%"></div>
-                            </div>
-                            <div class="skill-percentage">90%</div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-name">Python</div>
-                            <div class="skill-progress">
-                                <div class="progress" style="width: 85%"></div>
-                            </div>
-                            <div class="skill-percentage">85%</div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-name">HTML/CSS</div>
-                            <div class="skill-progress">
-                                <div class="progress" style="width: 95%"></div>
-                            </div>
-                            <div class="skill-percentage">95%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
                     <div class="skill-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>MongoDB</span>
-                        <span>Git</span>
-                        <span>Docker</span>
-                        <span>AWS</span>
-                        <span>Firebase</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span>Problem Solving</span>
-                        <span>Team Collaboration</span>
-                        <span>Communication</span>
+                        <span>AI & Machine Learning</span>
+                        <span>App Development</span>
+                        <span>Python</span>
                         <span>Project Management</span>
-                        <span>Leadership</span>
-                        <span>Time Management</span>
+                        <span>Blockchain</span>
+                        <span>Agent Systems</span>
+                        <span>iOS Development</span>
+                        <span>Problem Solving</span>
+                        <span>Financial Management</span>
+                        <span>First-Principles Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education & Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>University at Albany</h3>
+                        <p>Bachelor's in Informatics (Expected May 2026)</p>
+                        <p>Remote learning focused on AI and information systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Full-Ride Scholarship</h3>
+                        <p>Excelsior + Minerva Scholarships</p>
+                        <p>Proud undergrad at UAlbany.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>2022 Alfred University Scholar Award</h3>
+                        <p>Recognized for academic excellence and innovative thinking.</p>
                     </div>
                 </div>
             </div>
@@ -203,39 +199,23 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>your.email@example.com</p>
+                        <p><a href="mailto:jakeadams1230@gmail.com">jakeadams1230@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p><a href="tel:5183229577">(518) 322-9577</a></p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Location</h3>
-                        <p>City, Country</p>
+                        <p>Troy, New York</p>
                     </div>
-                    <div class="contact-social">
-                        <h3>Social Profiles</h3>
-                        <div class="social-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        </div>
+                    <div class="contact-item">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>This Webpage's Code</h3>
+                        <p><a href="https://github.com/jakeadams3/personal-website" target="_blank">View Source</a></p>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -243,19 +223,17 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Jake Adams. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
+            <p>&copy; 2025 Jake Adams. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://x.com/jaketadams" target="_blank" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://github.com/endev-llc" target="_blank" title="Endev GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/jakeadams3" target="_blank" title="Personal GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:jakeadams1230@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <a href="#home" class="back-to-top">
+    <a href="#about" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
