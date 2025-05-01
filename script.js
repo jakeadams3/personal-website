@@ -1,5 +1,32 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Make project images clickable
+    const projectCards = document.querySelectorAll('.companies-grid .project-card, .products-grid .project-card, .projects-grid .project-card');
+    
+    projectCards.forEach(card => {
+        const image = card.querySelector('.project-image img');
+        const link = card.querySelector('.project-links a');
+        
+        if (image && link) {
+            const imageContainer = card.querySelector('.project-image');
+            const linkHref = link.getAttribute('href');
+            const linkTarget = link.getAttribute('target');
+            
+            // Create anchor element
+            const anchor = document.createElement('a');
+            anchor.href = linkHref;
+            if (linkTarget) {
+                anchor.target = linkTarget;
+            }
+            
+            // Replace the image with the wrapped version
+            const imageClone = image.cloneNode(true);
+            imageContainer.innerHTML = '';
+            anchor.appendChild(imageClone);
+            imageContainer.appendChild(anchor);
+        }
+    });
+    
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
